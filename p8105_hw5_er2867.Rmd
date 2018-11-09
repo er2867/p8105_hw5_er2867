@@ -102,6 +102,8 @@ proportion_all =
   mutate(prop.test2 = map2(unsolved, total, prop_test2)) %>% 
   unnest()
 
+#Plot of proportions with confidence interval by city
+
 ggplot(proportion_all, aes(x = city_state, y = estimate )) + 
   geom_point() + geom_errorbar(aes(ymin = conf.low, ymax = conf.high)) + 
   theme(axis.text.x = element_text(angle = 80, hjust = 1, size = 8)) +
